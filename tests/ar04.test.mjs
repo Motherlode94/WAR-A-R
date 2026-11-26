@@ -1,0 +1,1 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {analyzeGroove} from '../src/groove.mjs';test('pattern positions and BPM',()=>{const r=analyzeGroove({bpm:120,tracks:[{clips:[{start:0,pattern:{kick:[1,0,1,0,1]}}]}]});assert.equal(r.stepMilliseconds,125);assert.equal(r.voices[0].hits,3);assert.equal(r.voices[0].offbeatFraction,1/3);});
